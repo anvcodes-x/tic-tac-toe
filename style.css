@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in element size */
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #1a6d1e;
+    color: white;
+    height: 55px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 20vw; /* Reduced size */
+    height: 20vw; /* Keep it square */
+    gap: 0; /* No gaps between grid items */
+    border: 3px solid black; /* Outer border for the grid */
+    background-color: white;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw; /* Adjust font size for smaller boxes */
+    font-weight: bold;
+    border: 1px solid black; /* Inner borders */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: #e6dbf7;
+}
+
+.gameInfo {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.imgbox img {
+    width: 200px; /* Set a default width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is displayed */
+    margin: 10px auto; /* Center the image */
+    transition: width 1s ease-in-out; /* Smooth transition for width changes */
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f3e7f9;
+    border: 2px solid #911d91;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #911d91;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#reset:hover {
+    background-color: #911d91;
+    color: white;
+}
+
+.line {
+    background-color: #911d91;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        width: 50vw; /* Adjust size for smaller screens */
+        height: 50vw;
+    }
+
+    .box {
+        font-size: 6vw; /* Adjust font size for smaller screens */
+    }
+
+    .gameInfo {
+        font-size: 1.2rem;
+    }
+
+    #reset {
+        font-size: 0.9rem;
+    }
+}
